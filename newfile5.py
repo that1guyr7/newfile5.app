@@ -12,104 +12,7 @@ greyblur = cv2.medianBlur(grey,7)
 
 #Detect circles
 
-# circles = cv2.HoughCircles(greyblur,cv2.HOUGH_GRADIENT,dp=1,minDist=20
-#     ,param1=100
-                                                                
-                                                                
-#                                                                 ,param2=30
-                                                                
-                                                                
-#                                                                                                             ,
-                                                                                                            
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-#                                                                                                             minRadius=10
-                                                                
-                                                                
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
- 
- 
- 
- 
- 
-# ,maxRadius=100)
+# circles = cv2.HoughCircles(greyblur,cv2.HOUGH_GRADIENT,dp=1,minDist=20,param1=100,param2=30,minRadius=10,maxRadius=100)                                                                                                                                         
 
 # print(circles)
 # circles = np.uint16(np.around(circles))
@@ -127,4 +30,8 @@ params.filterByInertia = True
 params.minInertiaRatio = 0.1
 detector = cv2.SimpleBlobDetector_create(params)
 keyPoints= detector.detect(blobs)
+blank = np.zeros((1,1))
+blob = cv2.drawKeypoints(blobs,keyPoints,blank,(0,0,255),cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+cv2.imshow("bobby++7",blob)
+cv2.waitKey(0)
 print(keyPoints)
